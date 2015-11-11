@@ -13,9 +13,8 @@ var findOrCreate = require(path.join(libPath, 'findOrCreate'));
 var findOrCreateEach = require(path.join(libPath, 'findOrCreateEach'));
 var update = require(path.join(libPath, 'update'));
 var validate = require(path.join(libPath, 'validate'));
-require(path.join(libPath, 'WLValidationError'));
-//patch WLValidationError
-//require(path.join(libPath, 'WLValidationError'));
+
+
 
 
 /**
@@ -27,7 +26,9 @@ require(path.join(libPath, 'WLValidationError'));
  * @param  {Object} sails a sails application instance
  */
 module.exports = function(sails) {
-
+    //patch WLValidationError
+    require(path.join(libPath, 'WLValidationError'));
+    
     //patch sails model
     //to add custom errors message
     //logic
