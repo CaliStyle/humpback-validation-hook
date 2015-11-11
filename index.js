@@ -13,7 +13,6 @@ var findOrCreate = require(path.join(libPath, 'findOrCreate'));
 var findOrCreateEach = require(path.join(libPath, 'findOrCreateEach'));
 var update = require(path.join(libPath, 'update'));
 var validate = require(path.join(libPath, 'validate'));
-
 require(path.join(libPath, 'WLValidationError'));
 //patch WLValidationError
 //require(path.join(libPath, 'WLValidationError'));
