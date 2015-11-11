@@ -27,8 +27,7 @@ var validate = require(path.join(libPath, 'validate'));
  */
 module.exports = function(sails) {
     //patch WLValidationError
-    require(path.join(libPath, 'WLValidationError'));
-    
+
     //patch sails model
     //to add custom errors message
     //logic
@@ -101,7 +100,7 @@ module.exports = function(sails) {
                     //bind custom errors logic
                     //and let sails to continue
                     patch();
-
+                    require(path.join(libPath, 'WLValidationError'));
                     done();
                 });
         }
