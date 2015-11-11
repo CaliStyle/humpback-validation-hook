@@ -4,15 +4,7 @@
 var path = require('path');
 var libPath = path.join(__dirname, 'lib');
 
-var validateCustom = require(path.join(libPath, 'validateCustom'));
 
-//patches
-var create = require(path.join(libPath, 'create'));
-var createEach = require(path.join(libPath, 'createEach'));
-var findOrCreate = require(path.join(libPath, 'findOrCreate'));
-var findOrCreateEach = require(path.join(libPath, 'findOrCreateEach'));
-var update = require(path.join(libPath, 'update'));
-var validate = require(path.join(libPath, 'validate'));
 
 
 
@@ -26,8 +18,15 @@ var validate = require(path.join(libPath, 'validate'));
  * @param  {Object} sails a sails application instance
  */
 module.exports = function(sails) {
-    //patch WLValidationError
-
+    
+    var validateCustom = require(path.join(libPath, 'validateCustom'));
+    //patches
+    var create = require(path.join(libPath, 'create'));
+    var createEach = require(path.join(libPath, 'createEach'));
+    var findOrCreate = require(path.join(libPath, 'findOrCreate'));
+    var findOrCreateEach = require(path.join(libPath, 'findOrCreateEach'));
+    var update = require(path.join(libPath, 'update'));
+    var validate = require(path.join(libPath, 'validate'));
     //patch sails model
     //to add custom errors message
     //logic
@@ -100,7 +99,9 @@ module.exports = function(sails) {
                     //bind custom errors logic
                     //and let sails to continue
                     patch();
+                    //patch WLValidationError
                     require(path.join(libPath, 'WLValidationError'));
+                    
                     done();
                 });
         }
