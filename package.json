@@ -65,7 +65,8 @@
   "dependencies": {
     "bluebird": "^2.9.30",
     "sails": "^0.11.0",
-    "sails-disk": "^0.10.7"
+    "sails-disk": "^0.10.7",
+    "waterline": "^0.11.0"
   },
   "devDependencies": {
     "lodash": ">2.4.0",
