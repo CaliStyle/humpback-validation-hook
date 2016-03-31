@@ -1,6 +1,6 @@
 {
   "name": "humpback-validation-hook",
-  "version": "0.11.9",
+  "version": "0.11.10",
   "description": "Custom validation error messages for sails model with i18n support",
   "main": "index.js",
   "sails": {
